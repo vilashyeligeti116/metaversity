@@ -1,0 +1,12 @@
+{
+  "name": "metaversity",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently -n SERVER,CLIENT -c cyan,magenta \"npm start --prefix server\" \"npm start --prefix client\"",
+    "server": "npm start --prefix server",
+    "client": "npm start --prefix client"
+  },
+  "devDependencies": { "concurrently": "^8.2.1" }
+}
