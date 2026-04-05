@@ -32,47 +32,6 @@ Founder enters metaverse, collaborates with team, builds startup
 | 🧑‍💼 **Expert** | Review assigned ideas with structured scoring + feedback |
 | 👑 **Admin** | Manage pipeline, assign experts, approve/reject, assign offices |
 
-**Default admin credentials (auto-seeded):**
-```
-Email:    admin@metaversity.io
-Password: Admin@123
-```
-
----
-
-## 🚀 Quick Start
-
-### Prerequisites
-- Node.js v16+
-- MongoDB (local or Atlas)
-- Chrome/Edge (best WebRTC support)
-
-### 1 — Install
-
-```bash
-cd metaversity
-npm install
-npm run install:all
-```
-
-### 2 — Configure MongoDB
-
-Edit `server/index.js` or set environment variable:
-```bash
-# Local MongoDB (default)
-MONGO_URI=mongodb://localhost:27017/metaversity
-
-# Or MongoDB Atlas
-MONGO_URI=mongodb+srv://user:pass@cluster.mongodb.net/metaversity
-```
-
-### 3 — Start
-
-```bash
-npm run dev
-# Server → http://localhost:4000
-# Client → http://localhost:3000
-```
 
 ---
 
@@ -171,38 +130,3 @@ metaversity/
 
 ---
 
-## 🔧 Configuration
-
-### Add TURN server (for production WebRTC)
-In `client/src/hooks/useOffice.js`:
-```js
-const ICE = {
-  iceServers: [
-    { urls: 'stun:stun.l.google.com:19302' },
-    { urls: 'turn:your-turn.example.com:3478', username: 'u', credential: 'p' },
-  ],
-};
-```
-
-### JWT Secret
-```bash
-JWT_SECRET=your-super-secret-key node server/index.js
-```
-
----
-
-## 🛠️ Troubleshooting
-
-| Problem | Fix |
-|---|---|
-| "Cannot reach server" | Run `npm run server`, check port 4000 |
-| MongoDB error | Start MongoDB or set `MONGO_URI` to Atlas URL |
-| Camera denied | Click lock icon → allow camera + mic → refresh |
-| Video call not starting | Both users must accept the talk request popup |
-| Works locally, not online | Add a TURN server (see above) |
-
----
-
-## 📄 License
-
-MIT — build freely, help students build their startups.
